@@ -6,21 +6,8 @@ import { fetchImages } from './assets/photos-api';
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import ImageGallery from './components/ImageGallery/ImageGallery';
-import Modal from 'react-modal';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
-Modal.setAppElement('#root');
+import ImageModal from './components/ImageModal/ImageModal';
 
 function App() {
   const [images, setImages] = useState([]);
@@ -110,22 +97,11 @@ function App() {
           <LoadMoreBtn onClick={onLoadMore}>Load More</LoadMoreBtn>
         )}
 
-        <div>
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            style={customStyles}
-            contentLabel="Example Modal"
-          >
-            <button onClick={closeModal}>close</button>
-            {modalData && (
-              <img
-                src={modalData.urls.regular}
-                alt={modalData.alt_description}
-              />
-            )}
-          </Modal>
-        </div>
+        <ImageModal
+          modalIsOpen={modalIsOpen}
+          closeModal={closeModal}
+          modalData={modalData}
+        />
       </main>
     </>
   );

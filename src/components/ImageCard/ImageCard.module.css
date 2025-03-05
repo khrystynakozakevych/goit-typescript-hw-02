@@ -1,0 +1,12 @@
+.image_modal {
+  background-color: bisque;
+  border-color: bisque !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 4px solid #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}

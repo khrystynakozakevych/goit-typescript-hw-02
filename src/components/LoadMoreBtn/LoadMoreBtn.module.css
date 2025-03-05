@@ -1,0 +1,9 @@
+.load_button {
+  margin: 20px auto;
+  padding: 15px 30px;
+  background-color: #606c38;
+}
+
+.load_button:hover {
+  background-color: #283618;
+}

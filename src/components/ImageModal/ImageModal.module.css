@@ -1,0 +1,53 @@
+.modal {
+  max-width: 80vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  color: #fff;
+}
+
+.close_btn {
+  position: absolute;
+  border-radius: 50%;
+  padding: 5px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0009;
+  color: #fff;
+  border: none;
+}
+
+.modal_img {
+  width: 80vw; /* Occupa l'80% della larghezza della finestra */
+  max-width: 800px; /* Larghezza massima */
+  height: auto; /* Altezza adattabile */
+  max-height: 90vh; /* Non supera il 90% dello schermo */
+  overflow: hidden; /* Evita scrollbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_info_wrapper {
+  color: black;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.img_info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img_info p {
+  display: flex;
+  gap: 5px;
+}

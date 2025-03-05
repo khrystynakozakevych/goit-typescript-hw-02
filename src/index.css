@@ -10,9 +10,8 @@ html {
 
 body {
   color: #0c0c0c;
-  background: #fbfbfb;
+  background-color: beige;
   min-width: 320px;
-  /* max-width: 1440px; */
   min-height: 100vh;
   margin: 0 auto;
   padding: 0;
@@ -55,6 +54,11 @@ a {
 
 button {
   cursor: pointer;
+  display: block;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 img {
