@@ -16,8 +16,10 @@
 
 .search_input {
   width: 100%;
-  height: 56px;
+  height: 50px;
   padding: 16px;
+  border-radius: 8px;
+  border: none;
 }
 
 .search_button {
