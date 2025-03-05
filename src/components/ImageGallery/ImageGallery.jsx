@@ -4,7 +4,6 @@ import css from './ImageGallery.module.css';
 const ImageGallery = ({ items, openModal }) => {
   return (
     <ul className={css.img_list}>
-      {console.log(items)}
       {items.map(({ id, urls, alt_description, user, likes }) => (
         <li key={id}>
           <ImageCard

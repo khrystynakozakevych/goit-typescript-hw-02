@@ -13,5 +13,8 @@ export const fetchImages = async (query, page) => {
   const response = await axios.get(`/search/photos`, {
     params: { query, page },
   });
-  return response.data.results;
+  return {
+    results: response.data.results,
+    total: response.data.total,
+  };
 };
