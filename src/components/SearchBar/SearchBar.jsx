@@ -1,23 +1,25 @@
 import { Toaster, toast } from 'react-hot-toast';
+import css from './SearchBar.module.css';
 
 const SearchBar = ({ onSearch }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    const topic = form.elements.topic.value;
-    if (form.elements.topic.value.trim() === '') {
+    const query = form.elements.search.value;
+    if (query.trim() === '') {
       toast.error('Please enter search term!');
       return;
     }
-    onSearch(topic);
+    onSearch(query);
     form.reset();
   };
   return (
-    <header>
+    <header className={css.header}>
       <form onSubmit={handleSubmit}>
         <input
+          className={css.search_input}
           type="text"
-          name="topic"
+          name="search"
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"

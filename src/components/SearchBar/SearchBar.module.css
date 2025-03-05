@@ -1,0 +1,19 @@
+.header {
+  background-color: #606c38;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header form {
+  /* width: 50%; */
+  /* max-width: 400px; */
+  text-align: center;
+  display: flex;
+  gap: 15px;
+}
+
+.search_input {
+  max-width: 200px;
+}

@@ -12,7 +12,7 @@ body {
   color: #0c0c0c;
   background: #fbfbfb;
   min-width: 320px;
-  max-width: 1440px;
+  /* max-width: 1440px; */
   min-height: 100vh;
   margin: 0 auto;
   padding: 0;
