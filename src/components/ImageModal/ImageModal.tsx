@@ -3,6 +3,13 @@ import css from './ImageModal.module.css';
 import { IoCloseOutline } from 'react-icons/io5';
 import { CiUser } from 'react-icons/ci';
 import { AiOutlineLike } from 'react-icons/ai';
+import { ImageItem } from '../../types/imageTypes';
+
+interface ImageModalProps {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  modalData: ImageItem | null;
+}
 
 const customStyles = {
   content: {
@@ -18,7 +25,11 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-const ImageModal = ({ modalIsOpen, closeModal, modalData }) => {
+const ImageModal: React.FC<ImageModalProps> = ({
+  modalIsOpen,
+  closeModal,
+  modalData,
+}) => {
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -42,7 +53,7 @@ const ImageModal = ({ modalIsOpen, closeModal, modalData }) => {
               <div className={css.img_info}>
                 <p>
                   <CiUser size={24} />
-                  {modalData.user}
+                  {modalData.user?.name || 'Unknown author'}
                 </p>
                 <p>
                   <AiOutlineLike size={24} />

@@ -1,5 +1,4 @@
 .modal {
-  max-width: 80vw;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -23,11 +22,11 @@
 }
 
 .modal_img {
-  width: 80vw; /* Occupa l'80% della larghezza della finestra */
-  max-width: 800px; /* Larghezza massima */
-  height: auto; /* Altezza adattabile */
-  max-height: 90vh; /* Non supera il 90% dello schermo */
-  overflow: hidden; /* Evita scrollbar */
+  width: 80vw;
+  max-width: 800px;
+  height: auto;
+  max-height: 90vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;

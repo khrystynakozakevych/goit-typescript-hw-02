@@ -6,16 +6,17 @@ import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 import ImageModal from './components/ImageModal/ImageModal';
 import Loader from './components/Loader/Loader';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
+import { ImageItem } from './types/imageTypes';
 
-function App() {
-  const [images, setImages] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [query, setQuery] = useState('');
-  const [page, setPage] = useState(1);
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [modalData, setModalData] = useState(null);
-  const [totalImages, setTotalImages] = useState(0);
+const App: React.FC = () => {
+  const [images, setImages] = useState<ImageItem[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+  const [query, setQuery] = useState<string>('');
+  const [page, setPage] = useState<number>(1);
+  const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+  const [modalData, setModalData] = useState<ImageItem | null>(null);
+  const [totalImages, setTotalImages] = useState<number>(0);
 
   useEffect(() => {
     if (query === '') {
@@ -42,8 +43,8 @@ function App() {
     setPage(page + 1);
   };
 
-  const handleSearch = query => {
-    setQuery(query);
+  const handleSearch = (newQuery: string) => {
+    setQuery(newQuery);
     setPage(1);
     setImages([]);
     setTotalImages(0);
@@ -51,7 +52,7 @@ function App() {
 
   const hasMoreImages = images.length < totalImages;
 
-  const openModal = selectedImage => {
+  const openModal = (selectedImage: ImageItem) => {
     setIsOpen(true);
     setModalData(selectedImage);
   };
@@ -82,6 +83,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;
