@@ -14,7 +14,7 @@ export const fetchImages = async (
   query: string,
   page: number
 ): Promise<ImageAPIResponse> => {
-  const response = await axios.get(`/search/photos`, {
+  const response = await axios.get<ImageAPIResponse>(`/search/photos`, {
     params: { query, page },
   });
   return {
